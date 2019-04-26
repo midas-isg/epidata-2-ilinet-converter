@@ -1,7 +1,8 @@
 import Epidata
-import csv
 import sys
-
+'''
+This is a basic converter that reads data from the EpiData service and writes the output in the same format as ILINet.
+'''
 def get_weeks_for_season(year):
 	weeks = []
 	for week in range(40,54):
@@ -67,12 +68,6 @@ def do_year(season, region):
 					f.write("\n")
 
 if __name__ == '__main__':
-	fieldnames = ['REGION TYPE', 'REGION', 'YEAR', 'WEEK', '% WEIGHTED ILI', '%UNWEIGHTED ILI', 'AGE 0-4', 'AGE 25-49', 'AGE 25-64', 'AGE 5-24', 'AGE 50-64', 'AGE 65', 'ILITOTAL', 'NUM. OF PROVIDERS', 'TOTAL PATIENTS']
-
-	#	{'release_date': '2014-10-03', 'region': 'nat', 'issue': 201439, 'epiweek': 201439, 'lag': 0, 'num_ili': 7987,
-	#	 'num_patients': 643078, 'num_providers': 1321, 'num_age_0': 2215, 'num_age_1': 3163, 'num_age_2': None,
-	#	 'num_age_3': 1661, 'num_age_4': 584, 'num_age_5': 364, 'wili': 1.1151346010797, 'ili': 1.2419955277587}]
-
 	#years =['2015','2016','2017','2018']
 	years = ['2014']
 	for year in years:
